@@ -1,0 +1,522 @@
+/* Reset CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: 'Varela Round', sans-serif;
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background-color: #15151500;
+    color: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    color: #111;
+    font-family: 'Varela Round', sans-serif;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+  }
+
+  .confession-form input[type="text"]::placeholder {
+    font-family: 'Varela Round', sans-serif;  }
+
+  .confession-form textarea::placeholder {
+    font-family: 'Varela Round', sans-serif;  }
+  
+  header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 1px;
+  }
+  
+  .toggle-switch {
+    display: inline-block;
+    height: 24px;
+    width: 48px;
+    position: relative;
+    border-radius: 30px;
+    background-color: #666;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  
+  .toggle-switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    border: 3px solid black;
+    top: 2px;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .toggle-slider::before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #666;
+    border: 3px solid black;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-slider {
+    transform: translateX(24px);
+    border: 3px solid black;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(20px);
+    background-color: #fff;
+    border: 3px solid black;
+  }
+  
+  /* Light and dark mode styles */
+  body {
+    font-family: 'Varela Round', sans-serif;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    max-width: 500px;
+    margin: auto; /* center the content horizontally */
+  }
+  
+  .light-mode {
+    background-color: #fff;
+    color: #000000;
+  }
+  
+  .dark-mode {
+    background-color: #000000;
+    color: #fff;
+  }
+
+  body.dark-mode textarea {
+    border: 2px solid #cecece;
+    background-color: #00000000;
+    color: #fff;
+    font-family: 'Varela Round', sans-serif;
+  }
+
+  body.dark-mode input {
+    border: 2px solid #cecece;
+    background-color: #00000000;
+    color: #fff;
+    font-family: 'Varela Round', sans-serif;
+  }
+
+  body.dark-mode h1 {
+    color: #ffffff;
+  }
+
+  body.dark-mode input::placeholder {
+    color: #999;
+  }
+
+  body.dark-mode textarea::placeholder {
+    color: #999;
+  }
+  
+  body.dark-mode .confession-list li {
+    border: 2px solid #cecece;
+  }
+
+  body.dark-mode button[type="submit"] {
+    border: 2px solid #cecece;
+  }
+
+  body.dark-mode button[type="submit"] {
+    border: 2px solid #cecece;
+  }
+
+  body.dark-mode .confession-form input[type="text"] {
+    border: 2px solid #cecece;
+  }
+  
+  /* Confession form styles */
+  .confession-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+  .confession-form label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .confession-form textarea {
+    width: 100%;
+    height: 6rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    resize: vertical;
+  }
+  
+  .confession-form input {
+    width: 100%;
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    resize: vertical;
+  }
+
+  .confession-form button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .confession-form button:hover {
+    background-color: #666;
+  }
+  
+  /* Confession list styles */
+  .confession-list {
+    margin: 0.2rem;
+  }
+  
+  .confession-list li p {
+    overflow: hidden; /* add this line */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    font-size: 15px;
+  }
+
+  .confession-list li {
+    /* existing styles */
+    border: 2px solid black; /* add a black border */
+    border-radius: 8px; /* add rounded corners */
+    margin: 10px;
+    padding: 5px; /* add padding */
+  }  
+  
+  .confession-list li span {
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .confession-list ul {
+    /* existing styles */
+    list-style: none; /* remove the bullet points */
+  }
+  
+  .confession-list li .delete-button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .confession-list li .delete-button:hover {
+    background-color: #666;
+    color: #fff;
+  }
+
+  .confession-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .confession-date {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: gray;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    background-color: #ffcccc;
+    color: #ff0000;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  /* Success message styles */
+  .success-message {
+    background-color: #ccffcc;
+    color: #00ff00;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .switch-container {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+    border: 3px solid black;
+  }
+  
+  .switch-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border: 3px solid black;
+  }
+  
+  .switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border: 3px solid black;
+    border-radius: 34px;
+    transition: 0.4s;
+  }
+  
+  .switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    border: 3px solid black;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  
+  input:checked + .switch-slider {
+    background-color: #2196f3;
+    border: 3px solid black;
+  }
+  
+  input:focus + .switch-slider {
+    box-shadow: 0 0 1px #2196f3;
+    border: 3px solid black;
+  }
+  
+  input:checked + .switch-slider:before {
+    transform: translateX(26px);
+    border: 3px solid black;
+  }
+  
+  /* Rounded sliders */
+  .switch-slider.round {
+    border-radius: 34px;
+    border: 3px solid black;
+  }
+  
+  .switch-slider.round:before {
+    border-radius: 50%;
+    border: 3px solid black;
+  }
+
+/* Toggle Switch Styles */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0 0.2rem;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border: 2px solid black;
+  }
+  
+  .toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+    border: 2px solid black;
+  }
+  
+  .toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+    border: 2px solid black;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+    border: 2px solid black;
+  }
+  
+  /* Rounded sliders */
+  .toggle-switch.round .slider {
+    border-radius: 34px;
+  }
+  
+  .toggle-switch.round .slider:before {
+    border-radius: 50%;
+  }
+  
+  /* Size variations */
+  .toggle-switch.small {
+    width: 30px;
+    height: 18px;
+  }
+  
+  .toggle-switch.small .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+  }
+  
+  .toggle-switch.medium {
+    width: 60px;
+    height: 34px;
+  }
+  
+  .toggle-switch.large {
+    width: 100px;
+    height: 54px;
+  }
+  
+  /* Color variations */
+  .toggle-switch.primary .slider {
+    background-color: #1976d2;
+  }
+  
+  .toggle-switch.primary input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  .toggle-switch.accent .slider {
+    background-color: #f44336;
+  }
+  
+  .toggle-switch.accent input:checked + .slider {
+    background-color: #FF5252;
+  }
+  
+  .toggle-switch.success .slider {
+    background-color: #4caf50;
+  }
+  
+  .toggle-switch.success input:checked + .slider {
+    background-color: #8bc34a;
+  }
+  
+  .toggle-switch.warning .slider {
+    background-color: #ff9800;
+  }
+  
+  .toggle-switch.warning input:checked + .slider {
+    background-color: #ffc107;
+  }
+  
+  .toggle-switch.info .slider {
+    background-color: #00bcd4;
+  }
+  
+  .toggle-switch.info input:checked + .slider {
+    background-color: #03a9f4;
+  }
+  
+  /* Disabled styles */
+  .toggle-switch.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  .toggle-switch.disabled input {
+    cursor: not-allowed;
+  }
+  
+  .toggle-switch.disabled .slider:before {
+    box-shadow: none;
+    background-color: #bbb;
+  }
+  
+  .toggle-switch.disabled .slider {
+    background-color: #ddd;
+  }
+  
+  .toggle-switch.disabled input:checked + .slider:before {
+    background-color: #aaa;
+  }
+
+  button[type="submit"] {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid black;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0c7cd5;
+  }
